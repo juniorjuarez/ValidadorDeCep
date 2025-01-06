@@ -16,15 +16,15 @@ async function verCep(cepValue) {
     dadosCepUnitario.innerHTML = `
 
     <ul id="json-campos">
-      <li>CEP: ${json.cep}</li>
-      <li>Logradouro: ${json.logradouro}</li>
-      <li>Complemento: ${json.complemento} </li>
-      <li>Bairro: ${json.bairro}</li>
-      <li>Localidade: ${json.localidade}</li>
-      <li>UF: ${json.uf}</li>
-      <li>Estado: ${json.estado}</li>
-      <li>Região: ${json.regiao}</li>
-      <li>DDD: ${json.ddd}</li>
+      <li><strong>CEP:</strong> ${json.cep}</li>
+<li><strong>Logradouro:</strong> ${json.logradouro}</li>
+<li><strong>Complemento:</strong> ${json.complemento}</li>
+<li><strong>Bairro:</strong> ${json.bairro}</li>
+<li><strong>Localidade:</strong> ${json.localidade}</li>
+<li><strong>UF:</strong> ${json.uf}</li>
+<li><strong>Estado:</strong> ${json.estado}</li>
+<li><strong>Região:</strong> ${json.regiao}</li>
+<li><strong>DDD:</strong> ${json.ddd}</li>
     </ul>`;
   }
   inputCep.value = "";
