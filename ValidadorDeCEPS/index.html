@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Validador de CEP. Valide e importe CEPs facilmente."
+    />
+    <title>Validador de CEP</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Validador de CEP</h1>
+    </header>
+
+    <main>
+      <section>
+        <h2>Validar CEP Unitário</h2>
+
+        <fieldset>
+          <legend>Insira um CEP</legend>
+          <label for="cep">CEP:</label>
+          <input
+            type="text"
+            id="cep"
+            name="cep"
+            maxlength="9"
+            placeholder="xxxxx-xxx"
+            pattern="\d{5}-?\d{3}"
+            required
+          />
+
+          <button id="btnEnviaCep">Validar</button>
+          <span id="msgAviso"></span>
+        </fieldset>
+        <div id="dadosCepUnitario"></div>
+      </section>
+      <!--
+      <section>
+        <h2>Importar CEP</h2>
+        <p>Faça o upload de um arquivo para importar os CEPs.</p>
+        <form id="importar-cep-form">
+          <label for="arquivo-cep">Selecione um arquivo CSV:</label>
+          <input
+            type="file"
+            id="arquivo-cep"
+            name="arquivo-cep"
+            accept=".csv"
+            required
+          />
+          <button type="submit">Importar</button>
+        </form>
+      </section>
+      -->
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Validador de CEP. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
