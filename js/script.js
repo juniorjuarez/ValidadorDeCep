@@ -11,7 +11,6 @@ async function verCep(cepValue) {
   let json = await response.json();
 
   if (json.erro) {
-    console.log(json);
     dadosCepUnitario.innerHTML = `<p>O CEP ${cepValue} não é mais valido.</p>`;
   } else {
     dadosCepUnitario.innerHTML = `
@@ -28,14 +27,13 @@ async function verCep(cepValue) {
       <li>DDD: ${json.ddd}</li>
     </ul>`;
   }
-
   inputCep.value = "";
 }
 
 const VerCep = () => {
   dadosCepUnitario.innerHTML = "";
+  msgAviso.innerHTML = "";
   const cepValue = inputCep.value.replace("-", "").replace(" ", "");
-
   if (cepValue === "") {
     msgAviso.innerHTML = "<p>Por favor digite um CEP válido.</p>";
   } else {
