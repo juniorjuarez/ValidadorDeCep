@@ -107,9 +107,9 @@ button:hover {
   font-size: 1rem;
 }
 
-#json-campos li:first-child {
+/* #json-campos li:first-child {
   font-weight: bold;
-}
+} */
 
 /* Footer */
 footer {
