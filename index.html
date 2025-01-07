@@ -40,19 +40,21 @@
       </section>
 
       <section>
-        <h2>Importar planilha com CEP (ainda em desenvolvimento)</h2>
+        <h2>Importar arquivo txt com CEPs (Limite de 10 CEPs)</h2>
         <p>Faça o upload de um arquivo para importar os CEPs.</p>
-        <form id="importar-cep-form">
-          <label for="arquivo-cep">Selecione um arquivo CSV:</label>
-          <input
-            type="file"
-            id="arquivo-cep"
-            name="arquivo-cep"
-            accept=".csv"
-            required
-          />
-          <button type="submit">Importar</button>
-        </form>
+
+        <label for="arquivo-cep">Selecione um arquivo CSV:</label>
+        <input
+          type="file"
+          id="arquivo-cep"
+          name="arquivo-cep"
+          accept=".txt"
+          required
+        />
+        <div id="prewviewCeps"></div>
+        <button type="submit" id="arquivoExemplo">Arquivo de exemplo</button>
+        <button type="submit" id="validarListaCep">Validar CEPs</button>
+        <div id="listaCeps"></div>
       </section>
     </main>
 
@@ -61,6 +63,7 @@
     </footer>
 
     <script src="js/script.js"></script>
+    <script src="js/file.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"

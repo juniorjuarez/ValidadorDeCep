@@ -85,6 +85,18 @@ button:hover {
   background-color: #45a049;
 }
 
+#limpaPreview {
+  /* display: inline-block; */
+  background-color: lightslategray;
+  color: white;
+  padding: 10px 15px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
 /* Avisos */
 #msgAviso {
   display: block;
@@ -107,7 +119,30 @@ button:hover {
   font-size: 1rem;
 }
 
-/* #json-campos li:first-child {
+#prewviewCeps pre {
+  background-color: #f4f4f4;
+  padding: 10px;
+  border: 1px solid #ccc;
+  max-width: 100%; /* Para que o tamanho seja dinâmico e ocupe o espaço disponível */
+  max-height: 500px;
+  overflow: auto;
+  white-space: pre-wrap; /* Permite a quebra de linha no conteúdo */
+  word-wrap: break-word;
+}
+
+#arquivoExemplo {
+  display: inline-block;
+  background-color: hsl(122, 39%, 49%);
+  color: white;
+  padding: 10px 15px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+/* 
+#json-campos li:first-child {
   font-weight: bold;
 } */
 
@@ -121,4 +156,45 @@ footer {
 footer p {
   margin: 0;
   font-size: 0.9rem;
+}
+
+#listaCeps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; /* Espaçamento entre as listas */
+  justify-content: space-between;
+  padding: 10px;
+}
+
+ul#ceps-lista-ul {
+  list-style: none;
+  width: 32%; /* 3 colunas com 32% de largura, para espaçar as listas */
+  font-size: small;
+  border: 1px solid #ddd; /* Borda sutil para separação */
+  padding: 10px;
+  border-radius: 5px; /* Bordas arredondadas */
+  background-color: #f9f9f9; /* Fundo claro */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave para destaque */
+}
+
+ul#ceps-lista-ul li {
+  margin-bottom: 5px; /* Espaço entre os itens */
+  line-height: 1.6; /* Aumenta a legibilidade */
+}
+
+strong {
+  color: #333; /* Cor mais forte para os títulos */
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  ul#ceps-lista-ul {
+    width: 48%; /* Duas colunas em telas médias */
+  }
+}
+
+@media (max-width: 480px) {
+  ul#ceps-lista-ul {
+    width: 100%; /* Uma coluna em telas pequenas */
+  }
 }
