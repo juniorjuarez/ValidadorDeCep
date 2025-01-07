@@ -75,7 +75,7 @@ async function validaListaCep(cep) {
   let json = await response.json();
 
   if (json.erro) {
-    listaCeps.innerHTML = `<p>O CEP ${cepValue} não é mais valido.</p>`;
+    listaCeps.innerHTML += `<span> CEP ${cep} não é mais valido.</span><hr/>`;
   } else {
     listaCeps.innerHTML += `
 
