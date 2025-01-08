@@ -58,7 +58,7 @@ inputFile.addEventListener("change", (event) => {
           if (validaCaractereCep(item)) {
             cepsArrray.push(item);
           } else {
-            listaCeps.innerHTML += `<span> CEP ${item} não é um CEP valido.</span><hr/>`;
+            listaCeps.innerHTML += `<span> CEP ${item} não é um CEP valido.</span>`;
           }
         }
 
@@ -93,7 +93,7 @@ async function validaListaCep(cep) {
   let json = await response.json();
 
   if (json.erro) {
-    listaCeps.innerHTML += `<span> CEP ${cep} não é mais valido.</span><hr/>`;
+    listaCeps.innerHTML += `<span> CEP ${cep} não é mais valido.</span>`;
   } else {
     listaCeps.innerHTML += `
 
@@ -108,7 +108,6 @@ async function validaListaCep(cep) {
       <li><strong>Região:</strong> ${json.regiao}</li>
       <li><strong>DDD:</strong> ${json.ddd}</li>
     </ul>
-    <hr/>
     `;
   }
 }
