@@ -4,6 +4,11 @@ const validarListaCep = document.querySelector("#validarListaCep");
 
 document.querySelector("arquivoExemplo");
 
+function validaCaractereCep(cep) {
+  const regex = /^[0-9]+$/;
+  return regex.test(cep);
+}
+
 const conteudoArquivo = [
   "39403-076",
   "0100-1000",
@@ -36,7 +41,6 @@ inputFile.addEventListener("change", (event) => {
   function isValidTxt(file) {
     const isTxtExtesion = file.name.endsWith(".txt");
     const isMimeType = file.type === "text/plains";
-
     return isTxtExtesion;
   }
 
@@ -45,10 +49,24 @@ inputFile.addEventListener("change", (event) => {
       const reader = new FileReader();
       reader.addEventListener("load", () => {
         const content = reader.result.split(",");
-        cepsArrray = content.map((item) =>
-          item.replace("-", "").replace(" ", "")
-        );
-        console.log(cepsArrray);
+
+        for (let i = 0; i < content.length; i++) {
+          let item = content[i].replace("-", "").replace(" ", "");
+          if (item.length == 7) {
+            item = "0" + item;
+          }
+          if (validaCaractereCep(item)) {
+            cepsArrray.push(item);
+          } else {
+            listaCeps.innerHTML += `<span> CEP ${item} não é um CEP valido.</span><hr/>`;
+          }
+        }
+
+        // cepsArrray = content.map((item) =>
+
+        //   item.replace("-", "").replace(" ", "")
+        // );
+
         prewviewCeps.innerHTML = "";
         prewviewCeps.innerHTML = `
         <pre>${cepsArrray}</pre> 
